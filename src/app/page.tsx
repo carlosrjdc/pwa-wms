@@ -4,7 +4,7 @@ import Image from "next/image";
 export default function Home() {
   return (
     <main className="">
-      return <MenuPrincipal_Page/>
+       <MenuPrincipal_Page/>
     </main>
   );
 }
