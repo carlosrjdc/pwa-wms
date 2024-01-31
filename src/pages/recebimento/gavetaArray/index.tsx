@@ -24,7 +24,7 @@ import {
 	SheetTitle,
 	SheetTrigger,
 } from "@/components/ui/sheet";
-
+import EditarProduto from "../Dialog";
 
 type Item = {
 	item: string;
@@ -110,7 +110,9 @@ export default function SheetSide() {
 					<ScrollArea className='h-full w-full rounded-md border'>
 						<div className='grid gap-4 py-4'>
 							{arrayItem.map((item, index) => (
-								<ItemArray key={index} item={item} />
+								<EditarProduto>
+									<ItemArray key={index} item={item} />
+								</EditarProduto>
 							))}
 						</div>
 						<Separator className='my-2' />
@@ -124,7 +126,7 @@ export default function SheetSide() {
 
 function ItemArray({ item }: { item: Item }) {
 	return (
-		<div>
+		<div className="    ">
 			<Card>
 				<CardHeader>
 					<CardTitle className='text-lg'>{item.item}</CardTitle>
