@@ -1,9 +1,10 @@
+import MenuPrincipal_Page from "@/pages/MenuInicial";
 import Image from "next/image";
 
 export default function Home() {
   return (
     <main className="">
-<div>ola</div>
+      return <MenuPrincipal_Page/>
     </main>
   );
 }
