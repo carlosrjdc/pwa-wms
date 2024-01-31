@@ -25,6 +25,7 @@ import {
 	SheetTrigger,
 } from "@/components/ui/sheet";
 import EditarProduto from "../Dialog";
+import { ListTodo, Pencil } from "lucide-react";
 
 type Item = {
 	item: string;
@@ -101,7 +102,9 @@ export default function SheetSide() {
 		<div className='grid grid-cols-2 gap-2'>
 			<Sheet>
 				<SheetTrigger asChild>
-					<Button variant='outline'>"teste"</Button>
+					<Button>
+						<ListTodo />
+					</Button>
 				</SheetTrigger>
 				<SheetContent className='h-5/6' side='bottom'>
 					<SheetHeader>
@@ -110,9 +113,7 @@ export default function SheetSide() {
 					<ScrollArea className='h-full w-full rounded-md border'>
 						<div className='grid gap-4 py-4'>
 							{arrayItem.map((item, index) => (
-								<EditarProduto>
-									<ItemArray key={index} item={item} />
-								</EditarProduto>
+								<ItemArray key={index} item={item} />
 							))}
 						</div>
 						<Separator className='my-2' />
@@ -126,16 +127,22 @@ export default function SheetSide() {
 
 function ItemArray({ item }: { item: Item }) {
 	return (
-		<div className="    ">
+		<div className=''>
 			<Card>
 				<CardHeader>
 					<CardTitle className='text-lg'>{item.item}</CardTitle>
 					<CardDescription>{item.desc}</CardDescription>
 				</CardHeader>
 				<CardContent>
-					<div className='flex gap-2'>
+					<div className='flex justify-between items-center'>
 						<Label>{item.Lote}</Label>
 						<Label>{item.quantidade}</Label>
+						<EditarProduto
+							item={item.item}
+							lote={item.Lote}
+							quantidade={item.quantidade}>
+							<Pencil />
+						</EditarProduto>
 					</div>
 				</CardContent>
 			</Card>

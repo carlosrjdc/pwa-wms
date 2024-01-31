@@ -112,7 +112,6 @@ export default function MaterialPage() {
 						<br />
 						<div className="flex justify-between">
 							<DrawerDemo />
-							<DrawerArray />
                             <SheetSide/>
 						</div>
 					</form>
