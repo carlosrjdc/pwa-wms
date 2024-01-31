@@ -74,8 +74,8 @@ export default function DrawerDemo() {
 			<DrawerContent>
 				<div className='mx-auto w-full max-w-sm'>
 					<DrawerHeader>
-						<DrawerTitle>Move Goal</DrawerTitle>
-						<DrawerDescription>Set your daily activity goal.</DrawerDescription>
+						<DrawerTitle>Foto Etiqueta</DrawerTitle>
+						<DrawerDescription>Tirar uma foto da etiqueta.</DrawerDescription>
 					</DrawerHeader>
 					<BuscarQRCode />
 					<DrawerFooter>
