@@ -69,7 +69,7 @@ export default function DrawerDemo() {
 	return (
 		<Drawer>
 			<DrawerTrigger asChild>
-				<Button variant='outline'>Open Drawer</Button>
+				<Button variant='outline'>Cadastro Automatico</Button>
 			</DrawerTrigger>
 			<DrawerContent>
 				<div className='mx-auto w-full max-w-sm'>
