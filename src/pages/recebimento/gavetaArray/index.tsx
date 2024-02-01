@@ -37,7 +37,7 @@ type Item = {
 const arrayItem = [
 	{
 		item: "60109822",
-		desc: "Iorgute Batavo",
+        desc: "Iorgute Batavo teste de tamanho de texto",
 		Lote: "400176521",
 		quantidade: 900,
 	},
@@ -99,26 +99,22 @@ const arrayItem = [
 
 export default function SheetSide() {
 	return (
-		<div className='grid grid-cols-2 gap-2'>
+		<div className='bg-orange-600'>
 			<Sheet>
 				<SheetTrigger asChild>
-					<Button>
-						<ListTodo />
-					</Button>
+					<ListTodo size={50} className="bg-sky-700 p-2" />
 				</SheetTrigger>
-				<SheetContent className='h-5/6' side='bottom'>
+				<SheetContent className='h-5/6 p-2' side='bottom'>
 					<SheetHeader>
 						<SheetTitle>Items conferidos</SheetTitle>
 					</SheetHeader>
-					<ScrollArea className='h-full w-full rounded-md border'>
-						<div className='grid gap-4 py-4'>
+					<ScrollArea className='h-full rounded-md '>
+						<div className='grid gap-2 py-4'>
 							{arrayItem.map((item, index) => (
 								<ItemArray key={index} item={item} />
 							))}
 						</div>
-						<Separator className='my-2' />
 					</ScrollArea>
-					<SheetFooter></SheetFooter>
 				</SheetContent>
 			</Sheet>
 		</div>
@@ -129,19 +125,19 @@ function ItemArray({ item }: { item: Item }) {
 	return (
 		<div className=''>
 			<Card>
-				<CardHeader>
-					<CardTitle className='text-lg'>{item.item}</CardTitle>
-					<CardDescription>{item.desc}</CardDescription>
-				</CardHeader>
-				<CardContent>
-					<div className='flex justify-between items-center'>
-						<Label>{item.Lote}</Label>
-						<Label>{item.quantidade}</Label>
+				<CardContent className='flex flex-col justify-center p-3 gap-2 bg-slate-100/90'>
+					<div className='flex gap-4 justify-between'>
+						<CardTitle className='text-lg'>{item.item}</CardTitle>
+						<CardDescription>{item.desc}</CardDescription>
+					</div>
+					<div className='flex items-center justify-between'>
+						<Label className="text-xs font-semibold">Lote: {item.Lote}</Label>
+						<Label className="text-lg font-semibold">Cx:{item.quantidade}</Label>
 						<EditarProduto
 							item={item.item}
 							lote={item.Lote}
 							quantidade={item.quantidade}>
-							<Pencil />
+							<Pencil size={25} />
 						</EditarProduto>
 					</div>
 				</CardContent>

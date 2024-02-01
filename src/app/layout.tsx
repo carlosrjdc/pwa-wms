@@ -25,6 +25,7 @@ export const metadata: Metadata = {
     title: APP_DEFAULT_TITLE,
     // startUpImage: [],
   },
+
   formatDetection: {
     telephone: false,
   },
@@ -49,6 +50,10 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: "#FFFFFF",
+  initialScale: 1,
+  width: "device-width",
+  maximumScale: 1,
+  userScalable: false
 };
 
 export default function RootLayout({

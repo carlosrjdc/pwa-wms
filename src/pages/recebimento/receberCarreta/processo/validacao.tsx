@@ -1,3 +1,7 @@
+import SliderAjuda from "../SliderAjuda";
+
 export default function ValidarPage(){
-    return <div>Pagina Validar</div>
+    return <div>
+        Validacao
+    </div>
 }

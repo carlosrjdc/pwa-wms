@@ -23,6 +23,7 @@ import DrawerDemo from "../../drawerQrCode";
 import CalendarForm from "../../Calendario";
 import DrawerArray from "../../drawerArray";
 import SheetSide from "../../gavetaArray";
+import FormItemPage from "./formItems";
 
 const FormSchema = z.object({
 	username: z.string().min(2, {
@@ -60,18 +61,29 @@ export default function MaterialPage() {
 	const router = useRouter();
 	return (
 		<div className='flex flex-col'>
-			<div className='p-2 flex flex-1'>
+			<div className='p-2 gap-8 flex'>
 				<Form {...form}>
-					<form onSubmit={form.handleSubmit(onSubmit)} className='w-full'>
+					<form
+						onSubmit={form.handleSubmit(onSubmit)}
+						className='w-full flex flex-col gap-4'>
 						<FormField
 							control={form.control}
 							name='username'
 							render={({ field }) => (
-								<FormItem>
-									<FormLabel>Produto</FormLabel>
-									<FormControl>
-										<Input placeholder='Produto' {...field} />
-									</FormControl>
+								<FormItem className=''>
+									<div className='flex border-2'>
+										<FormLabel className='text-xl px-2 font-bold uppercase items-center border rounded-l flex bg-slate-400'>
+											Produto
+										</FormLabel>
+										<FormControl className='w-full '>
+											<Input
+												type='number'
+												className='text-lg font-semibold items-center border rounded-r flex focus:outline-none'
+												placeholder='Produto'
+												{...field}
+											/>
+										</FormControl>
+									</div>
 									<FormMessage />
 								</FormItem>
 							)}
@@ -81,10 +93,18 @@ export default function MaterialPage() {
 							name='Doca'
 							render={({ field }) => (
 								<FormItem>
-									<FormLabel>Lote</FormLabel>
-									<FormControl>
-										<Input placeholder='Lote' {...field} />
-									</FormControl>
+									<div className='flex border-2'>
+										<FormLabel className='text-xl px-2 font-bold uppercase items-center border rounded-l flex bg-slate-400'>
+											Lote
+										</FormLabel>
+										<FormControl className='w-full '>
+											<Input
+												className='text-xl font-semibold items-center border rounded-r flex focus:outline-none'
+												placeholder='Lote'
+												{...field}
+											/>
+										</FormControl>
+									</div>
 									<FormMessage />
 								</FormItem>
 							)}
@@ -93,26 +113,22 @@ export default function MaterialPage() {
 							control={form.control}
 							name='Placa'
 							render={({ field }) => (
-								<FormItem>
-									<FormLabel>Quantidade</FormLabel>
-									<FormControl>
-										<Input placeholder='Quantidade' {...field} />
-									</FormControl>
-									<FormMessage />
-								</FormItem>
+								<FormItemPage label="Placa" field={field}/>
 							)}
 						/>
-						<div className='mt-4'>
+						<div className='mt-4 '>
 							<CalendarForm />
-							<Button className='mt-2' type='submit'>
-								Submit
-							</Button>
+							<div className='flex justify-end items-center'>
+								<Button className='mt-2' type='submit'>
+									CADASTRAR
+								</Button>
+							</div>
 						</div>
 						<br />
 						<br />
-						<div className="flex justify-between">
+						<div className='flex justify-between p-2 border rounded'>
 							<DrawerDemo />
-                            <SheetSide/>
+							<SheetSide />
 						</div>
 					</form>
 				</Form>

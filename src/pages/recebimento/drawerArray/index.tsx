@@ -80,7 +80,7 @@ type Item = {
 const arrayItem = [
 	{
 		item: "60109822",
-		desc: "Iorgute Batavo",
+		desc: "Iorgute Batavo teste de tamanho de texto",
 		Lote: "400176521",
 		quantidade: 900,
 	},
@@ -150,9 +150,7 @@ export default function DrawerArray() {
 	return (
 		<Drawer>
 			<DrawerTrigger asChild>
-				<Button>
-					<ListTodo />
-				</Button>
+				<ListTodo />
 			</DrawerTrigger>
 			<DrawerContent>
 				<div className='mx-auto w-full max-w-sm'>
@@ -161,9 +159,9 @@ export default function DrawerArray() {
 						<DrawerDescription>Itens Conferidos</DrawerDescription>
 					</DrawerHeader>
 
-						{arrayItem.map((item, index) => (
-							<ItemArray key={index} item={item} />
-						))}
+					{arrayItem.map((item, index) => (
+						<ItemArray key={index} item={item} />
+					))}
 
 					<DrawerFooter>
 						<DrawerClose asChild>
@@ -184,12 +182,12 @@ function ItemArray({ item }: { item: Item }) {
 		<div>
 			<Card>
 				<CardHeader>
-					<CardTitle className="text-lg">{item.item}</CardTitle>
+					<CardTitle className='text-lg'>{item.item}</CardTitle>
 					<CardDescription>{item.desc}</CardDescription>
 				</CardHeader>
 				<CardContent>
-					<div className="flex gap-2">
-						<Input className="" value={item.Lote} />
+					<div className='flex gap-2'>
+						<Input className='' value={item.Lote} />
 						<Input value={item.quantidade} />
 					</div>
 				</CardContent>

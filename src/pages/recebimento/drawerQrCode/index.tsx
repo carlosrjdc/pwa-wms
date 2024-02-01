@@ -16,9 +16,8 @@ import {
 } from "@/components/ui/drawer";
 import BuscarQRCode from "../qrCode";
 import Image from "next/image";
-import automatico from "../../../assets/recebimento/automatico.png"
+import automatico from "../../../assets/recebimento/automatico.png";
 import { Bot } from "lucide-react";
-
 
 const data = [
 	{
@@ -72,9 +71,7 @@ export default function DrawerDemo() {
 	return (
 		<Drawer>
 			<DrawerTrigger asChild>
-				<Button>
-                    <Bot />
-                </Button>
+				<Bot  size={50} className="bg-sky-700 p-2" />
 			</DrawerTrigger>
 			<DrawerContent>
 				<div className='mx-auto w-full max-w-sm'>
