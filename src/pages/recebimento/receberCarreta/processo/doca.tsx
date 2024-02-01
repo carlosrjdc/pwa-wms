@@ -20,7 +20,6 @@ import {
 import { Input } from "@/components/ui/input";
 import { toast } from "@/components/ui/use-toast";
 import DrawerDemo from "../../drawerQrCode";
-import FormItemPage from "./formItems";
 
 const FormSchema = z.object({
 	username: z.string().min(2, {
@@ -70,38 +69,63 @@ export default function DocaPage() {
 							control={form.control}
 							name='username'
 							render={({ field }) => (
-								<FormItemPage label='OCR' field={field} />
+								<FormItem>
+									<FormLabel>OCR</FormLabel>
+									<FormControl>
+										<Input placeholder='OCR' {...field} />
+									</FormControl>
+									<FormMessage />
+								</FormItem>
 							)}
 						/>
 						<FormField
 							control={form.control}
 							name='Doca'
 							render={({ field }) => (
-								<FormItemPage label='Doca' field={field} />
+								<FormItem>
+									<FormLabel>Doca</FormLabel>
+									<FormControl>
+										<Input placeholder='Doca' {...field} />
+									</FormControl>
+									<FormMessage />
+								</FormItem>
 							)}
 						/>
 						<FormField
 							control={form.control}
 							name='Placa'
 							render={({ field }) => (
-								<FormItemPage label='Placa' field={field} />
+								<FormItem>
+									<FormLabel>Placa</FormLabel>
+									<FormControl>
+										<Input placeholder='Placa' {...field} />
+									</FormControl>
+									<FormMessage />
+								</FormItem>
 							)}
 						/>
 						<FormField
 							control={form.control}
 							name='Lacre'
 							render={({ field }) => (
-								<FormItemPage label='Lacre' field={field} />
+								<FormItem>
+									<FormLabel>Lacre</FormLabel>
+									<FormControl>
+										<Input placeholder='Lacre' {...field} />
+									</FormControl>
+									<FormMessage />
+								</FormItem>
 							)}
 						/>
 
-						<div className='mt-4'>
+						<div className='mt-4' >
 							<FormLabel>Foto Carreta</FormLabel>
-							<Input type='file' />
+							<Input type='file'/>
 						</div>
 						<Button className='mt-2' type='submit'>
 							Iniciar Conferencia
 						</Button>
+
 					</form>
 				</Form>
 			</div>

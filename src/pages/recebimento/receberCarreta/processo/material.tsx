@@ -23,7 +23,6 @@ import DrawerDemo from "../../drawerQrCode";
 import CalendarForm from "../../Calendario";
 import DrawerArray from "../../drawerArray";
 import SheetSide from "../../gavetaArray";
-import FormItemPage from "./formItems";
 
 const FormSchema = z.object({
 	username: z.string().min(2, {
@@ -113,7 +112,22 @@ export default function MaterialPage() {
 							control={form.control}
 							name='Placa'
 							render={({ field }) => (
-								<FormItemPage label="Placa" field={field}/>
+								<FormItem>
+									<div className='flex border-2'>
+										<FormLabel className='text-xl px-2 font-bold uppercase items-center border rounded-l flex bg-slate-400'>
+											Quantidade
+										</FormLabel>
+										<FormControl className='w-full '>
+											<Input
+												type='number'
+												className='text-xl font-semibold items-center border rounded-r flex focus:outline-none'
+												placeholder='Quantidade'
+												{...field}
+											/>
+										</FormControl>
+									</div>
+									<FormMessage />
+								</FormItem>
 							)}
 						/>
 						<div className='mt-4 '>
